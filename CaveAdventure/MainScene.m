@@ -11,6 +11,8 @@
 
 #define HERO_SIZE CGSizeMake(40, 30)
 #define WALL_WIDTH 40
+#define WALL_WIDTH_SCALE_MAX 3.0f
+#define WALL_WIDTH_SCALE_MIN 1.0f
 #define WALL_HEIGHT_SCALE_MAX 3.0f
 #define WALL_HEIGHT_SCALE_MIN 1.5f
 
@@ -26,7 +28,8 @@
 #define ACTIONKEY_ADDDUST @"adddust"
 #define ACTIONKEY_MOVEHEAD @"movehead"
 
-#define GROUND_HEIGHT 20.0f
+#define GROUND_HEIGHT 50.0f
+#define SKY_HEIGHT 50.0f
 
 #define TIMEINTERVAL_ADDWALL 4.0f
 #define TIMEINTERVAL_MOVEWALL 4.0f
@@ -45,6 +48,7 @@ static const uint32_t heroCategory = 0x1 << 0;
 static const uint32_t wallCategory = 0x1 << 1;
 static const uint32_t holeCategory = 0x1 << 2;
 static const uint32_t groundCategory = 0x1 << 3;
+static const uint32_t skyCategory = 0x1 << 3;
 static const uint32_t edgeCategory = 0x1 << 4;
 
 @interface MainScene() <SKPhysicsContactDelegate, RestartViewDelegate>
@@ -55,6 +59,7 @@ static const uint32_t edgeCategory = 0x1 << 4;
 @property (strong, nonatomic) SKAction *moveHeadAction;
 
 @property (strong, nonatomic) SKSpriteNode *ground;
+@property (strong, nonatomic) SKSpriteNode *sky;
 
 @property (strong, nonatomic) SKLabelNode *labelNode;
 
@@ -90,6 +95,9 @@ static const uint32_t edgeCategory = 0x1 << 4;
     //ground
     [self addGroundNode];
     
+    //sky
+    [self addSkyNode];
+    
     //hero
     [self addHeroNode];
     
@@ -111,7 +119,7 @@ static const uint32_t edgeCategory = 0x1 << 4;
     _labelNode.fontSize = 30.0f;
     _labelNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     _labelNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeTop;
-    _labelNode.position = CGPointMake(10, self.frame.size.height - 20);
+    _labelNode.position = CGPointMake(10, self.frame.size.height - SKY_HEIGHT - 20);
     _labelNode.fontColor = COLOR_LABEL;
     [self addChild:_labelNode];
 }
@@ -172,6 +180,17 @@ static const uint32_t edgeCategory = 0x1 << 4;
     [self addChild:_ground];
 }
 
+- (void)addSkyNode
+{
+    self.sky = [SKSpriteNode spriteNodeWithColor:COLOR_WALL size:CGSizeMake(self.frame.size.width, SKY_HEIGHT)];
+    _sky.anchorPoint = CGPointMake(0, 0);
+    _sky.position = CGPointMake(0, self.frame.size.height - SKY_HEIGHT);
+    _sky.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_sky.size center:CGPointMake(_sky.size.width / 2.0f, _sky.size.height / 2.0f)];
+    _sky.physicsBody.categoryBitMask = skyCategory;
+    _sky.physicsBody.dynamic = NO;
+    [self addChild:_sky];
+}
+
 - (void)addDust
 {
     CGFloat dustWidth = (arc4random() % (DUSTWIDTH_MAX - DUSTWIDTH_MIN + 1) + DUSTWIDTH_MIN) * DUST_WIDTH;
@@ -185,10 +204,12 @@ static const uint32_t edgeCategory = 0x1 << 4;
 
 - (void)addWall
 {
-    CGFloat spaceHeigh = self.frame.size.height - GROUND_HEIGHT;
+    CGFloat spaceHeigh = self.frame.size.height - GROUND_HEIGHT - SKY_HEIGHT;
     
-    self.heightScale -= 0.01;
+    if (self.heightScale > WALL_HEIGHT_SCALE_MIN*1.2)
+    {self.heightScale -= 0.01;}
     CGFloat holeLength = HERO_SIZE.height * ((arc4random()%(int)((self.heightScale - WALL_HEIGHT_SCALE_MIN)*100))/ 100.0 + WALL_HEIGHT_SCALE_MIN);
+    CGFloat holeWidth = WALL_WIDTH * ((arc4random()%(int)((WALL_WIDTH_SCALE_MAX - WALL_WIDTH_SCALE_MIN)*100))/ 100.0 + WALL_HEIGHT_SCALE_MIN);
     int holePosition = arc4random() % (int)((spaceHeigh - holeLength) / HERO_SIZE.height);
     
     CGFloat x = self.frame.size.width;
@@ -196,7 +217,7 @@ static const uint32_t edgeCategory = 0x1 << 4;
     //上部分
     CGFloat upHeight = holePosition * HERO_SIZE.height;
     if (upHeight > 0) {
-        SKSpriteNode *upWall = [SKSpriteNode spriteNodeWithColor:COLOR_WALL size:CGSizeMake(WALL_WIDTH, upHeight)];
+        SKSpriteNode *upWall = [SKSpriteNode spriteNodeWithColor:COLOR_WALL size:CGSizeMake(holeWidth, upHeight)];
         upWall.anchorPoint = CGPointMake(0, 0);
         upWall.position = CGPointMake(x, self.frame.size.height - upHeight);
         upWall.name = NODENAME_WALL;
@@ -214,7 +235,7 @@ static const uint32_t edgeCategory = 0x1 << 4;
     //下部分
     CGFloat downHeight = spaceHeigh - upHeight - holeLength;
     if (downHeight > 0) {
-        SKSpriteNode *downWall = [SKSpriteNode spriteNodeWithColor:COLOR_WALL size:CGSizeMake(WALL_WIDTH, downHeight)];
+        SKSpriteNode *downWall = [SKSpriteNode spriteNodeWithColor:COLOR_WALL size:CGSizeMake(holeWidth, downHeight)];
         downWall.anchorPoint = CGPointMake(0, 0);
         downWall.position = CGPointMake(x, GROUND_HEIGHT);
         downWall.name = NODENAME_WALL;
@@ -230,7 +251,7 @@ static const uint32_t edgeCategory = 0x1 << 4;
     }
     
     //中空部分
-    SKSpriteNode *hole = [SKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(WALL_WIDTH, holeLength)];
+    SKSpriteNode *hole = [SKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(holeWidth, holeLength)];
     hole.anchorPoint = CGPointMake(0, 0);
     hole.position = CGPointMake(x, self.frame.size.height - upHeight - holeLength);
     hole.name = NODENAME_HOLE;
