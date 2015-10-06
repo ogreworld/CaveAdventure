@@ -1,0 +1,599 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		88356B3C1BC2935800707AA3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88356B3B1BC2935800707AA3 /* main.m */; };
+		88356B3F1BC2935800707AA3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88356B3E1BC2935800707AA3 /* AppDelegate.m */; };
+		88356B471BC2935800707AA3 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88356B461BC2935800707AA3 /* GameViewController.m */; };
+		88356B4A1BC2935800707AA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88356B481BC2935800707AA3 /* Main.storyboard */; };
+		88356B4C1BC2935800707AA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88356B4B1BC2935800707AA3 /* Assets.xcassets */; };
+		88356B4F1BC2935800707AA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88356B4D1BC2935800707AA3 /* LaunchScreen.storyboard */; };
+		88356B5A1BC2935900707AA3 /* CaveAdventureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88356B591BC2935900707AA3 /* CaveAdventureTests.m */; };
+		88356B651BC2935900707AA3 /* CaveAdventureUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88356B641BC2935900707AA3 /* CaveAdventureUITests.m */; };
+		88356B751BC2951800707AA3 /* RestartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88356B741BC2951800707AA3 /* RestartView.m */; settings = {ASSET_TAGS = (); }; };
+		88356B7A1BC2955C00707AA3 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 88356B771BC2955C00707AA3 /* MainScene.m */; settings = {ASSET_TAGS = (); }; };
+		88356B7B1BC2955C00707AA3 /* SRScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 88356B791BC2955C00707AA3 /* SRScene.m */; settings = {ASSET_TAGS = (); }; };
+		88356B831BC2963200707AA3 /* sfx_hit.caf in Resources */ = {isa = PBXBuildFile; fileRef = 88356B7F1BC2963200707AA3 /* sfx_hit.caf */; settings = {ASSET_TAGS = (); }; };
+		88356B841BC2963200707AA3 /* sfx_point.aif in Resources */ = {isa = PBXBuildFile; fileRef = 88356B801BC2963200707AA3 /* sfx_point.aif */; settings = {ASSET_TAGS = (); }; };
+		88356B851BC2963200707AA3 /* sfx_point.caf in Resources */ = {isa = PBXBuildFile; fileRef = 88356B811BC2963200707AA3 /* sfx_point.caf */; settings = {ASSET_TAGS = (); }; };
+		88356B861BC2963200707AA3 /* sfx_wing.caf in Resources */ = {isa = PBXBuildFile; fileRef = 88356B821BC2963200707AA3 /* sfx_wing.caf */; settings = {ASSET_TAGS = (); }; };
+		88356B881BC296B800707AA3 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88356B871BC296B800707AA3 /* SpriteKit.framework */; };
+		88356B8A1BC296DC00707AA3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88356B891BC296DC00707AA3 /* CoreGraphics.framework */; };
+		88356B8C1BC2970100707AA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88356B8B1BC2970100707AA3 /* Foundation.framework */; };
+		88356B8E1BC2970F00707AA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88356B8D1BC2970F00707AA3 /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		88356B561BC2935900707AA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88356B2F1BC2935800707AA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88356B361BC2935800707AA3;
+			remoteInfo = CaveAdventure;
+		};
+		88356B611BC2935900707AA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88356B2F1BC2935800707AA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88356B361BC2935800707AA3;
+			remoteInfo = CaveAdventure;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		88356B371BC2935800707AA3 /* CaveAdventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaveAdventure.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88356B3B1BC2935800707AA3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		88356B3D1BC2935800707AA3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		88356B3E1BC2935800707AA3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		88356B451BC2935800707AA3 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		88356B461BC2935800707AA3 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		88356B491BC2935800707AA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		88356B4B1BC2935800707AA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		88356B4E1BC2935800707AA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		88356B501BC2935800707AA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88356B551BC2935900707AA3 /* CaveAdventureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaveAdventureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88356B591BC2935900707AA3 /* CaveAdventureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaveAdventureTests.m; sourceTree = "<group>"; };
+		88356B5B1BC2935900707AA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88356B601BC2935900707AA3 /* CaveAdventureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaveAdventureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88356B641BC2935900707AA3 /* CaveAdventureUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaveAdventureUITests.m; sourceTree = "<group>"; };
+		88356B661BC2935900707AA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88356B731BC2951800707AA3 /* RestartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestartView.h; sourceTree = "<group>"; };
+		88356B741BC2951800707AA3 /* RestartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestartView.m; sourceTree = "<group>"; };
+		88356B761BC2955C00707AA3 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
+		88356B771BC2955C00707AA3 /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
+		88356B781BC2955C00707AA3 /* SRScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRScene.h; sourceTree = "<group>"; };
+		88356B791BC2955C00707AA3 /* SRScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRScene.m; sourceTree = "<group>"; };
+		88356B7D1BC2963200707AA3 /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		88356B7F1BC2963200707AA3 /* sfx_hit.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_hit.caf; sourceTree = "<group>"; };
+		88356B801BC2963200707AA3 /* sfx_point.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_point.aif; sourceTree = "<group>"; };
+		88356B811BC2963200707AA3 /* sfx_point.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_point.caf; sourceTree = "<group>"; };
+		88356B821BC2963200707AA3 /* sfx_wing.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_wing.caf; sourceTree = "<group>"; };
+		88356B871BC296B800707AA3 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		88356B891BC296DC00707AA3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		88356B8B1BC2970100707AA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		88356B8D1BC2970F00707AA3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		88356B8F1BC2992D00707AA3 /* CaveAdventure-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CaveAdventure-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88356B341BC2935800707AA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88356B8E1BC2970F00707AA3 /* UIKit.framework in Frameworks */,
+				88356B8C1BC2970100707AA3 /* Foundation.framework in Frameworks */,
+				88356B8A1BC296DC00707AA3 /* CoreGraphics.framework in Frameworks */,
+				88356B881BC296B800707AA3 /* SpriteKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88356B521BC2935900707AA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88356B5D1BC2935900707AA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		88356B2E1BC2935800707AA3 = {
+			isa = PBXGroup;
+			children = (
+				88356B8D1BC2970F00707AA3 /* UIKit.framework */,
+				88356B8B1BC2970100707AA3 /* Foundation.framework */,
+				88356B891BC296DC00707AA3 /* CoreGraphics.framework */,
+				88356B871BC296B800707AA3 /* SpriteKit.framework */,
+				88356B391BC2935800707AA3 /* CaveAdventure */,
+				88356B581BC2935900707AA3 /* CaveAdventureTests */,
+				88356B631BC2935900707AA3 /* CaveAdventureUITests */,
+				88356B381BC2935800707AA3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		88356B381BC2935800707AA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88356B371BC2935800707AA3 /* CaveAdventure.app */,
+				88356B551BC2935900707AA3 /* CaveAdventureTests.xctest */,
+				88356B601BC2935900707AA3 /* CaveAdventureUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88356B391BC2935800707AA3 /* CaveAdventure */ = {
+			isa = PBXGroup;
+			children = (
+				88356B3D1BC2935800707AA3 /* AppDelegate.h */,
+				88356B3E1BC2935800707AA3 /* AppDelegate.m */,
+				88356B721BC294FC00707AA3 /* scene */,
+				88356B451BC2935800707AA3 /* GameViewController.h */,
+				88356B461BC2935800707AA3 /* GameViewController.m */,
+				88356B481BC2935800707AA3 /* Main.storyboard */,
+				88356B4B1BC2935800707AA3 /* Assets.xcassets */,
+				88356B4D1BC2935800707AA3 /* LaunchScreen.storyboard */,
+				88356B501BC2935800707AA3 /* Info.plist */,
+				88356B3A1BC2935800707AA3 /* Supporting Files */,
+			);
+			path = CaveAdventure;
+			sourceTree = "<group>";
+		};
+		88356B3A1BC2935800707AA3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				88356B8F1BC2992D00707AA3 /* CaveAdventure-Prefix.pch */,
+				88356B7C1BC2963200707AA3 /* Common */,
+				88356B7E1BC2963200707AA3 /* Sound */,
+				88356B3B1BC2935800707AA3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		88356B581BC2935900707AA3 /* CaveAdventureTests */ = {
+			isa = PBXGroup;
+			children = (
+				88356B591BC2935900707AA3 /* CaveAdventureTests.m */,
+				88356B5B1BC2935900707AA3 /* Info.plist */,
+			);
+			path = CaveAdventureTests;
+			sourceTree = "<group>";
+		};
+		88356B631BC2935900707AA3 /* CaveAdventureUITests */ = {
+			isa = PBXGroup;
+			children = (
+				88356B641BC2935900707AA3 /* CaveAdventureUITests.m */,
+				88356B661BC2935900707AA3 /* Info.plist */,
+			);
+			path = CaveAdventureUITests;
+			sourceTree = "<group>";
+		};
+		88356B721BC294FC00707AA3 /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				88356B761BC2955C00707AA3 /* MainScene.h */,
+				88356B771BC2955C00707AA3 /* MainScene.m */,
+				88356B781BC2955C00707AA3 /* SRScene.h */,
+				88356B791BC2955C00707AA3 /* SRScene.m */,
+				88356B731BC2951800707AA3 /* RestartView.h */,
+				88356B741BC2951800707AA3 /* RestartView.m */,
+			);
+			name = scene;
+			sourceTree = "<group>";
+		};
+		88356B7C1BC2963200707AA3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				88356B7D1BC2963200707AA3 /* Defines.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		88356B7E1BC2963200707AA3 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				88356B7F1BC2963200707AA3 /* sfx_hit.caf */,
+				88356B801BC2963200707AA3 /* sfx_point.aif */,
+				88356B811BC2963200707AA3 /* sfx_point.caf */,
+				88356B821BC2963200707AA3 /* sfx_wing.caf */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		88356B361BC2935800707AA3 /* CaveAdventure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88356B691BC2935900707AA3 /* Build configuration list for PBXNativeTarget "CaveAdventure" */;
+			buildPhases = (
+				88356B331BC2935800707AA3 /* Sources */,
+				88356B341BC2935800707AA3 /* Frameworks */,
+				88356B351BC2935800707AA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CaveAdventure;
+			productName = CaveAdventure;
+			productReference = 88356B371BC2935800707AA3 /* CaveAdventure.app */;
+			productType = "com.apple.product-type.application";
+		};
+		88356B541BC2935900707AA3 /* CaveAdventureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88356B6C1BC2935900707AA3 /* Build configuration list for PBXNativeTarget "CaveAdventureTests" */;
+			buildPhases = (
+				88356B511BC2935900707AA3 /* Sources */,
+				88356B521BC2935900707AA3 /* Frameworks */,
+				88356B531BC2935900707AA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88356B571BC2935900707AA3 /* PBXTargetDependency */,
+			);
+			name = CaveAdventureTests;
+			productName = CaveAdventureTests;
+			productReference = 88356B551BC2935900707AA3 /* CaveAdventureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		88356B5F1BC2935900707AA3 /* CaveAdventureUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88356B6F1BC2935900707AA3 /* Build configuration list for PBXNativeTarget "CaveAdventureUITests" */;
+			buildPhases = (
+				88356B5C1BC2935900707AA3 /* Sources */,
+				88356B5D1BC2935900707AA3 /* Frameworks */,
+				88356B5E1BC2935900707AA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88356B621BC2935900707AA3 /* PBXTargetDependency */,
+			);
+			name = CaveAdventureUITests;
+			productName = CaveAdventureUITests;
+			productReference = 88356B601BC2935900707AA3 /* CaveAdventureUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88356B2F1BC2935800707AA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = ogre;
+				TargetAttributes = {
+					88356B361BC2935800707AA3 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					88356B541BC2935900707AA3 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 88356B361BC2935800707AA3;
+					};
+					88356B5F1BC2935900707AA3 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 88356B361BC2935800707AA3;
+					};
+				};
+			};
+			buildConfigurationList = 88356B321BC2935800707AA3 /* Build configuration list for PBXProject "CaveAdventure" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 88356B2E1BC2935800707AA3;
+			productRefGroup = 88356B381BC2935800707AA3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88356B361BC2935800707AA3 /* CaveAdventure */,
+				88356B541BC2935900707AA3 /* CaveAdventureTests */,
+				88356B5F1BC2935900707AA3 /* CaveAdventureUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88356B351BC2935800707AA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88356B841BC2963200707AA3 /* sfx_point.aif in Resources */,
+				88356B851BC2963200707AA3 /* sfx_point.caf in Resources */,
+				88356B831BC2963200707AA3 /* sfx_hit.caf in Resources */,
+				88356B4F1BC2935800707AA3 /* LaunchScreen.storyboard in Resources */,
+				88356B4C1BC2935800707AA3 /* Assets.xcassets in Resources */,
+				88356B4A1BC2935800707AA3 /* Main.storyboard in Resources */,
+				88356B861BC2963200707AA3 /* sfx_wing.caf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88356B531BC2935900707AA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88356B5E1BC2935900707AA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88356B331BC2935800707AA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88356B471BC2935800707AA3 /* GameViewController.m in Sources */,
+				88356B3F1BC2935800707AA3 /* AppDelegate.m in Sources */,
+				88356B7A1BC2955C00707AA3 /* MainScene.m in Sources */,
+				88356B7B1BC2955C00707AA3 /* SRScene.m in Sources */,
+				88356B751BC2951800707AA3 /* RestartView.m in Sources */,
+				88356B3C1BC2935800707AA3 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88356B511BC2935900707AA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88356B5A1BC2935900707AA3 /* CaveAdventureTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88356B5C1BC2935900707AA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88356B651BC2935900707AA3 /* CaveAdventureUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		88356B571BC2935900707AA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88356B361BC2935800707AA3 /* CaveAdventure */;
+			targetProxy = 88356B561BC2935900707AA3 /* PBXContainerItemProxy */;
+		};
+		88356B621BC2935900707AA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88356B361BC2935800707AA3 /* CaveAdventure */;
+			targetProxy = 88356B611BC2935900707AA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		88356B481BC2935800707AA3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88356B491BC2935800707AA3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		88356B4D1BC2935800707AA3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88356B4E1BC2935800707AA3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		88356B671BC2935900707AA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		88356B681BC2935900707AA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88356B6A1BC2935900707AA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CaveAdventure/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ogreworld.CaveAdventure;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		88356B6B1BC2935900707AA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CaveAdventure/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ogreworld.CaveAdventure;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		88356B6D1BC2935900707AA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = CaveAdventureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ogreworld.CaveAdventureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CaveAdventure.app/CaveAdventure";
+			};
+			name = Debug;
+		};
+		88356B6E1BC2935900707AA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CaveAdventureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ogreworld.CaveAdventureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CaveAdventure.app/CaveAdventure";
+			};
+			name = Release;
+		};
+		88356B701BC2935900707AA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = CaveAdventureUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ogreworld.CaveAdventureUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CaveAdventure;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		88356B711BC2935900707AA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CaveAdventureUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ogreworld.CaveAdventureUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CaveAdventure;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88356B321BC2935800707AA3 /* Build configuration list for PBXProject "CaveAdventure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88356B671BC2935900707AA3 /* Debug */,
+				88356B681BC2935900707AA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88356B691BC2935900707AA3 /* Build configuration list for PBXNativeTarget "CaveAdventure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88356B6A1BC2935900707AA3 /* Debug */,
+				88356B6B1BC2935900707AA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		88356B6C1BC2935900707AA3 /* Build configuration list for PBXNativeTarget "CaveAdventureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88356B6D1BC2935900707AA3 /* Debug */,
+				88356B6E1BC2935900707AA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		88356B6F1BC2935900707AA3 /* Build configuration list for PBXNativeTarget "CaveAdventureUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88356B701BC2935900707AA3 /* Debug */,
+				88356B711BC2935900707AA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 88356B2F1BC2935800707AA3 /* Project object */;
+}
