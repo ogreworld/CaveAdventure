@@ -27,6 +27,8 @@
 #define ACTIONKEY_FLY @"fly"
 #define ACTIONKEY_ADDDUST @"adddust"
 #define ACTIONKEY_MOVEHEAD @"movehead"
+#define ACTIONKEY_MOVEHEADUP @"moveheadup"
+#define ACTIONKEY_MOVEHEADDOWN @"moveheaddown"
 
 #define GROUND_HEIGHT 50.0f
 #define SKY_HEIGHT 50.0f
@@ -58,6 +60,9 @@ static const uint32_t edgeCategory = 0x1 << 4;
 @property (strong, nonatomic) SKAction *moveWallAction;
 @property (strong, nonatomic) SKAction *moveHeadAction;
 
+@property (strong, nonatomic) SKAction *moveUpHeadAction;
+@property (strong, nonatomic) SKAction *moveDownHeadAction;
+
 @property (strong, nonatomic) SKSpriteNode *ground;
 @property (strong, nonatomic) SKSpriteNode *sky;
 
@@ -85,11 +90,13 @@ static const uint32_t edgeCategory = 0x1 << 4;
     
     self.moveWallAction = [SKAction moveToX:-WALL_WIDTH duration:TIMEINTERVAL_MOVEWALL];
     
-    SKAction *upHeadAction = [SKAction rotateToAngle:M_PI / 6 duration:0.2f];
+    SKAction *upHeadAction = [SKAction rotateToAngle:M_PI / 12 duration:0.2f];
     upHeadAction.timingMode = SKActionTimingEaseOut;
-    SKAction *downHeadAction = [SKAction rotateToAngle:-M_PI / 2 duration:0.8f];
+    SKAction *downHeadAction = [SKAction rotateToAngle:-M_PI / 12 duration:0.2f];
     downHeadAction.timingMode = SKActionTimingEaseOut;
     self.moveHeadAction = [SKAction sequence:@[upHeadAction, downHeadAction,]];
+    self.moveUpHeadAction = upHeadAction;
+    self.moveDownHeadAction = downHeadAction;
     
     self.heightScale = WALL_HEIGHT_SCALE_MAX;
     //ground
@@ -136,14 +143,16 @@ static const uint32_t edgeCategory = 0x1 << 4;
 
 - (SKAction *)flyUpAction
 {
-    SKAction *flyUp1 = [SKAction moveToY:_hero.position.y + 1000 duration:10.0f];
+    float movePositon = self.frame.size.height - self.labelNode.frame.size.height - self.sky.frame.size.height;
+    SKAction *flyUp1 = [SKAction moveToY:movePositon duration:(movePositon - _hero.position.y)/100.0];
     flyUp1.timingMode = SKActionTimingEaseOut;
     return flyUp1;
 }
 
 - (SKAction *)flyDownAction
 {
-    SKAction *flyDown1 = [SKAction moveToY:_hero.position.y - 1000 duration:10.0f];
+    float movePositon = self.ground.frame.size.height;
+    SKAction *flyDown1 = [SKAction moveToY:movePositon duration:(_hero.position.y - movePositon)/100.0];
     flyDown1.timingMode = SKActionTimingEaseOut;
     return flyDown1;
 }
@@ -160,7 +169,7 @@ static const uint32_t edgeCategory = 0x1 << 4;
     _hero.physicsBody.contactTestBitMask = holeCategory | wallCategory | groundCategory;
     _hero.physicsBody.dynamic = YES;
     _hero.physicsBody.affectedByGravity = NO;
-    _hero.physicsBody.allowsRotation = NO;
+    _hero.physicsBody.allowsRotation = YES;
     _hero.physicsBody.restitution = 0;
     _hero.physicsBody.usesPreciseCollisionDetection = YES;
     [self addChild:_hero];
@@ -227,7 +236,8 @@ static const uint32_t edgeCategory = 0x1 << 4;
         upWall.physicsBody.dynamic = NO;
         upWall.physicsBody.friction = 0;
         
-        [upWall runAction:_moveWallAction withKey:ACTIONKEY_MOVEWALL];
+        SKAction *moveUpWallAction = [SKAction moveToX:-holeWidth duration:TIMEINTERVAL_MOVEWALL];
+        [upWall runAction:moveUpWallAction withKey:ACTIONKEY_MOVEWALL];
         
         [self addChild:upWall];
     }
@@ -245,7 +255,8 @@ static const uint32_t edgeCategory = 0x1 << 4;
         downWall.physicsBody.dynamic = NO;
         downWall.physicsBody.friction = 0;
         
-        [downWall runAction:_moveWallAction withKey:ACTIONKEY_MOVEWALL];
+        SKAction *moveDownWallAction = [SKAction moveToX:-holeWidth duration:TIMEINTERVAL_MOVEWALL];
+        [downWall runAction:moveDownWallAction withKey:ACTIONKEY_MOVEWALL];
         
         [self addChild:downWall];
     }
@@ -260,7 +271,8 @@ static const uint32_t edgeCategory = 0x1 << 4;
     hole.physicsBody.categoryBitMask = holeCategory;
     hole.physicsBody.dynamic = NO;
     
-    [hole runAction:_moveWallAction withKey:ACTIONKEY_MOVEWALL];
+    SKAction *moveHoleAction = [SKAction moveToX:-holeWidth duration:TIMEINTERVAL_MOVEWALL];
+    [hole runAction:moveHoleAction withKey:ACTIONKEY_MOVEWALL];
     
     [self addChild:hole];
 }
@@ -317,7 +329,7 @@ static const uint32_t edgeCategory = 0x1 << 4;
 {
     self.isGameOver = YES;
     
-    [_hero removeActionForKey:ACTIONKEY_MOVEHEAD];
+    [_hero removeActionForKey:ACTIONKEY_MOVEHEADUP];
     
     [self removeActionForKey:ACTIONKEY_ADDWALL];
     
@@ -380,9 +392,11 @@ static const uint32_t edgeCategory = 0x1 << 4;
         [self startGame];
     }
     
-    //_hero.physicsBody.velocity = CGVectorMake(0, 400);
+    //_hero.physicsBody.velocity = CGVectorMake(0, 200);
     //[_hero runAction:_moveHeadAction withKey:ACTIONKEY_MOVEHEAD];
-    [_hero removeActionForKey:ACTIONKEY_FLY];
+    //[_hero removeActionForKey:ACTIONKEY_FLY];
+    [_hero removeActionForKey:ACTIONKEY_MOVEHEADDOWN];
+    [_hero runAction:[self moveUpHeadAction]withKey:ACTIONKEY_MOVEHEADUP];
     [_hero runAction:[self flyUpAction]];
     //[self playSoundWithName:@"sfx_wing.caf"];
 }
@@ -394,7 +408,8 @@ static const uint32_t edgeCategory = 0x1 << 4;
     
     if (_isGameStart)
     {
-        [_hero removeActionForKey:ACTIONKEY_FLY];
+        [_hero removeActionForKey:ACTIONKEY_MOVEHEADUP];
+        [_hero runAction:[self moveDownHeadAction] withKey:ACTIONKEY_MOVEHEADDOWN];
         [_hero runAction:[self flyDownAction]];
     }
 }
